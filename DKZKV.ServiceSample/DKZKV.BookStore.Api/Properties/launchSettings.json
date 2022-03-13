@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "DKZKV.BookStore": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7141;http://localhost:5115",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "BOOKSTOREOPTIONS__DATABASECONNECTION": "Server=.\\SQLEXPRESS,1433;Database=BookStoreBd;User Id=sa;Password=yourStrong(!)Password;Enlist=False;"
+      }
+    }
+  }
+}

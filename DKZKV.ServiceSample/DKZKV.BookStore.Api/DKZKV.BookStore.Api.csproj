@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>DKZKV.BookStore</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DocumentationFile>bin\Debug\net6.0\DKZKV.BookStore.Api.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\net6.0\DKZKV.BookStore.Api.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Update="appsettings.Development.json">
+            <DependentUpon>appsettings.json</DependentUpon>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0"/>
+        <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.4.0"/>
+        <PackageReference Include="MediatR" Version="10.0.1"/>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0-rc.1.21452.15"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DKZKV.BookStore.Application.Commands\DKZKV.BookStore.Application.Commands.csproj"/>
+        <ProjectReference Include="..\DKZKV.Common\DKZKV.Common.csproj"/>
+        <ProjectReference Include="..\DKZKV.BookStore.Domain\DKZKV.BookStore.Domain.csproj"/>
+        <ProjectReference Include="..\DKZKV.MandatoryOptions\DKZKV.MandatoryOptions.csproj"/>
+        <ProjectReference Include="..\DKZKV.BookStore.Persistence\DKZKV.BookStore.Persistence.csproj"/>
+        <ProjectReference Include="..\DKZKV.Swagger\DKZKV.Swagger.csproj"/>
+    </ItemGroup>
+
+</Project>
