@@ -137,7 +137,7 @@ At first glance it seems quite obvious that we should always separate the house 
 #### In conclusion
 Should we now abandon Entity Core in the name of pure domain models? Of course not! Entity Core is a very powerful tool that greatly simplifies development. A further comparative analysis is described in this [article](https://enterprisecraftsmanship.com/posts/having-the-domain-model-separate-from-the-persistence-model/).
 Here we can see a correlation between the complexity and purity of domain models. That at least do not tracked in EF Core.
-Image here
+![](https://raw.githubusercontent.com/dkzkv/DKZKV.ServiceSample/main/assets/2016-04-05-2.png)
 
 ### Structure
 **Api** 
@@ -145,11 +145,11 @@ Image here
 - Presentation models
  
 **Application** 
-- **Application.Commands** 
--- Commands 
--- Commands handlers 
--- Validation 
--- Extensions for commands pipeline behavior such as transactional behaviour 
++ **Application.Commands** 
+    + Commands 
+    + Commands handlers 
+    + Validation 
+    + Extensions for commands pipeline behavior such as transactional behaviour 
 
 - **Application.Queries**
 -- Queries 
