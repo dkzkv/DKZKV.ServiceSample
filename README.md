@@ -8,8 +8,8 @@ This is a test training project designed to demonstrate DDD, CQRS with a separat
     + Query/View model 
     + Domain model 
     + Persisntece model 
-    + Validation in corruption layer
-    + Transactional commands 
++ Validation in corruption layer
++ Transactional commands 
 ***A single write/read model is used, but it can be easily separated***
 
 #### Important!!!
