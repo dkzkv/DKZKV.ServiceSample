@@ -9,21 +9,21 @@ namespace DKZKV.BookStore.ComponentTests.Infrastructure;
 
 public class BookStoreInfrastructureConfigurator
 {
-    private readonly ICollection<ContainerBase> _containers;
+    private readonly ICollection<ContainerBase> containers;
 
     public BookStoreInfrastructureConfigurator()
     {
         RemoveAllContainers();
-        _containers = new List<ContainerBase>
+        containers = new List<ContainerBase>
         {
             new SqlServerDbContainer()
         };
-        Thread.Sleep(5000);
+        Thread.Sleep(10000);
     }
 
     public void Configure()
     {
-        foreach (var container in _containers)
+        foreach (var container in containers)
             container.SetupEnvironmentVariables();
     }
 
