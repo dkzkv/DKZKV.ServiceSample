@@ -1,25 +1,25 @@
 # Book store service
 ### What is this project and why is it needed?
 This is a test training project designed to demonstrate DDD, CQRS with a separate model for each layer.
-- Pure domain, without any correlation with context or database
-- Separeted commands and queries in defferent projects 
-- Separate models for each layer. Which allows you to freely denormalize data between layers and not be tied to technologies
--- Presentation model  
--- Query/View model 
--- Domain model 
--- Persisntece model 
-- Validation in corruption layer
-- Transactional commands 
++ Pure domain, without any correlation with context or database
++ Separeted commands and queries in defferent projects 
++ Separate models for each layer. Which allows you to freely denormalize data between layers and not be tied to technologies
+    + Presentation model  
+    + Query/View model 
+    + Domain model 
+    + Persisntece model 
+    + Validation in corruption layer
+    + Transactional commands 
 ***A single write/read model is used, but it can be easily separated***
 
 #### Important!!!
 The repository is exclusively educational in nature and serves as an example, you should not use it as a template in a real project. Some points in the code are controversial and serve for better clarity.
 
 If we are going to make a simple service that will never be changed, then of course we should not do DDD, prescribe domain mapping models and implement several projects
-- API
-- Application
-- Domain
-- Infrastructure
++ API
++ Application
++ Domain
++ Infrastructure
 
 If the service is *stupid*, then calling dbcontext from the controller, which in turn returns a dynamic object, **is not a crime**. Such service does not scale, but it is written in 5 real minutes, not in *5 minutes of a programmer*
 
@@ -137,6 +137,7 @@ At first glance it seems quite obvious that we should always separate the house 
 #### In conclusion
 Should we now abandon Entity Core in the name of pure domain models? Of course not! Entity Core is a very powerful tool that greatly simplifies development. A further comparative analysis is described in this [article](https://enterprisecraftsmanship.com/posts/having-the-domain-model-separate-from-the-persistence-model/).
 Here we can see a correlation between the complexity and purity of domain models. That at least do not tracked in EF Core.
+
 ![](https://raw.githubusercontent.com/dkzkv/DKZKV.ServiceSample/main/assets/2016-04-05-2.png)
 
 ### Structure
@@ -152,19 +153,19 @@ Here we can see a correlation between the complexity and purity of domain models
     + Extensions for commands pipeline behavior such as transactional behaviour 
 
 - **Application.Queries**
--- Queries 
--- Query models aka View models 
+    + Queries 
+    + Query models aka View models 
 
 **Domain** 
-- AgrettionRoots 
-- Entityies 
-- ValueObjects 
-- Enumerations 
-- Repositories 
-- Seeds 
++ AgrettionRoots 
++ Entityies 
++ ValueObjects 
++ Enumerations 
++ Repositories 
++ Seeds 
 
 **Persistence / Infrastrucure**
-- Persistence models 
-- Repository implemetations 
-- Query handlers 
-- DbContext
++ Persistence models 
++ Repository implemetations 
++ Query handlers 
++ DbContext
